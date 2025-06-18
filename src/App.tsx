@@ -12,8 +12,7 @@ const App = () => {
       <Topbar/>
     <div className='flex'>
       <Sidebar/>
-      <div className='flex-11/12 flex flex-col'>
-        <Dashboard/>
+      
       </div>
       <div className='flex-grow p-6'>
         <Routes>
@@ -24,7 +23,7 @@ const App = () => {
         </Routes>
       </div>
       </div>
-    </div>
+    
   )
 }
 
