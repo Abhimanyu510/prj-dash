@@ -30,7 +30,7 @@ const Sidebar = () => {
             }
             >
                 <LuUsersRound />
-                Admins
+                Admin
             </NavLink>
         </nav>
       

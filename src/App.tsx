@@ -1,5 +1,5 @@
 
-import { Routes,Route } from "react-router-dom";
+import {Routes,Route } from "react-router-dom";
 import Sidebar from "./components/Sidebar";
 import Dashboard from "./pages/Dashboard";
 import Admin from "./pages/Admin";
@@ -13,14 +13,21 @@ const App = () => {
     <div className='flex'>
       <Sidebar/>
       
-      </div>
-      <div className='flex-grow p-6'>
-        <Routes>
-          <Route path='/dashboard'
-          element={<Dashboard/>}/>
+      
+      
+      
+      < div className='flex-grow p-6'>
+        
+        
+        <Routes>  
+          <Route path='/dashboard/*'
+          element={<Dashboard/>} />
+          
           <Route path='/admin' 
           element={<Admin/>}/>
         </Routes>
+       
+      </div>
       </div>
       </div>
     
