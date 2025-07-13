@@ -6,7 +6,7 @@ import { RiHomeSmileFill } from "react-icons/ri";
 
 const Sidebar = () => {
   return (
-    <div className='bg-green-50 w-64 h-screen px-6 py-4 shadow-md'>
+    <div className='bg-green-50 w-70 h-screen px-5 py-4 shadow-md'>
         <h1 className='text-2xl font-bold text-green-600 mb-6'>project_name</h1>
         <p className='text-xs text-gray-500 mb-14'>MAIN MENU</p>
         <nav className='flex flex-col gap-2'>

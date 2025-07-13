@@ -29,4 +29,3 @@ const Topbar:React.FC<TopbarProps> = ({onMenuClick}) => {
 }
 
 export default Topbar
-
