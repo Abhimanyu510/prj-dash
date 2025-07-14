@@ -66,7 +66,7 @@ const CO2: React.FC = () => {
   }, []);
 
   return (
-    <div className="bg-white p-4 rounded shadow w-full">
+    <div className="bg-white  p-4 rounded shadow w-full">
       <Chart options={options} series={series} type="line" height={300} />
     </div>
   );

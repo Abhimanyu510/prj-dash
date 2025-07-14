@@ -67,7 +67,7 @@ const Temperature: React.FC = () => {
   }, []);
 
   return (
-    <div className="bg-white p-4 rounded shadow w-full">
+    <div className="bg-white p-4  mt-17 flex-col rounded shadow w-full">
       <Chart options={options} series={series} type="line" height={300} />
     </div>
   );

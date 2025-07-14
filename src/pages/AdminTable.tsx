@@ -18,12 +18,12 @@ const AdminData = [
 const AdminTable = () => {
   const [entries, setEntries] = useState(10);
   return (
-   <div className="bg-green-50 w-full  ">
+   <div className=" w-full  ">
 
       <div className="min-h-screen w-full py-0">
  
 
-  <header className="bg-white fixed top-0 left-64 w-full h-14 flex items-center px-4 z-50 shadow font-bold text-2xl ">
+  <header className="bg-white fixed top-0 left-68 w-full h-14 flex items-center px-4 z-50 shadow font-bold text-2xl ">
    Admin
   <span className="ml-256">
     <FaUserCircle/>
