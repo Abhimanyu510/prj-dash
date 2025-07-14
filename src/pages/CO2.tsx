@@ -1,56 +1,75 @@
-import React from "react";
-import Chart from "react-apexcharts";
-import type {ApexOptions} from "apexcharts";
+import React, { useEffect, useState } from 'react';
+import Chart from 'react-apexcharts';
+import type { ApexOptions } from 'apexcharts';
 
-const C02: React.FC = () => {
-  const years = [
-    2024, 2025, 2026, 2027, 2028, 2029,
-    2030, 2031, 2032, 2033, 2034, 2035,
-  ];
+const CO2: React.FC = () => {
+  const [series, setSeries] = useState([
+    {
+      name: 'Temperature',
+      data: generateInitialData(),
+    },
+  ]);
+
+  const [years, setYears] = useState<number[]>(generateInitialYears());
 
   const options: ApexOptions = {
     chart: {
-      id: "temperature-chart",
-      toolbar: { show: false },
-    },
-    xaxis: {
-      categories: years,
-    },
-    stroke: {
-      curve: "smooth",
-    },
-    fill: {
-      type: "gradient",
-      gradient: {
-        shade: "light",
-        gradientToColors: ["#3B82F6"],
-        opacityFrom: 0.6,
-        opacityTo: 0.1,
+      id: 'Humidity Chart',
+      animations: {
+        enabled: true,
+        dynamicAnimation: {
+          speed: 1000,
+        },
       },
     },
-    colors: ["#3B82F6"],
-    dataLabels: {
-      enabled: false,
+    xaxis: {
+      categories: years.map((y) => y.toString()),
+      
+    },
+    stroke: {
+      curve: 'smooth',
     },
     title: {
-      text: "Temperature",
-      align: "left",
-      style: { fontSize: "16px", fontWeight: "bold" },
+      text: 'CO2',
+      align: 'left',
     },
+    colors:['#eab308']
   };
 
-  const series = [
-    {
-      name: "CO2",
-      data: [20000, 30000, 25000, 80000, 50000, 60000, 70000, 90000, 75000, 60000, 65000, 70000],
-    },
-  ];
+  function generateInitialData() {
+    return Array.from({ length: 10 }, () => Math.floor(Math.random() * 100) + 20);
+  }
+
+  function generateInitialYears() {
+    const currentYear = new Date().getFullYear() - 9;
+    return Array.from({ length: 10 }, (_, i) => currentYear + i);
+  }
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setSeries((prev) => {
+        const newData = [...prev[0].data];
+        newData.push(Math.floor(Math.random() * 100) + 30);
+        newData.shift();
+        return [{ ...prev[0], data: newData }];
+      });
+
+      setYears((prevYears) => {
+        const newYears = [...prevYears];
+        newYears.push(newYears[newYears.length - 1] + 1);
+        newYears.shift();
+        return newYears;
+      });
+    }, 5000);
+
+    return () => clearInterval(interval);
+  }, []);
 
   return (
-    <div className="bg-white rounded-2xl shadow p-4 mb-6">
-      <Chart options={options} series={series} type="area" height={300} />
+    <div className="bg-white p-4 rounded shadow w-full">
+      <Chart options={options} series={series} type="line" height={300} />
     </div>
   );
 };
 
-export default C02;
+export default CO2;

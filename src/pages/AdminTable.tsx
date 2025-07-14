@@ -98,11 +98,11 @@ const AdminTable = () => {
 
 
 <div className="flex justify-center mt-4 gap-2 text-sm cursor-pointer">
-<button className="px-3 py-1  text-gray-500">Previous</button>
-<button className="px-3 py-1 bg-blue-600 text-white rounded">1</button>
-<button className="px-3 py-1 bg-gray-200 rounded">2</button>
-<button className="px-3 py-1 bg-gray-200 rounded">3</button>
-<button className="px-3 py-1 text-gray-500 ">Next</button>
+<button className="px-3 py-1  text-gray-500 cursor-pointer hover:text-gray-700">Previous</button>
+<button className="px-3 py-1 hover:bg-blue-600 hover:text-white bg-gray-400 rounded">1</button>
+<button className="px-3 py-1 bg-gray-400 hover:bg-blue-600 hover:text-white rounded">2</button>
+<button className="px-3 py-1 bg-gray-400 hover:bg-blue-600 hover:text-white rounded">3</button>
+<button className="px-3 py-1  text-gray-500 cursor-pointer hover:text-gray-700">Next</button>
 
 </div>
 

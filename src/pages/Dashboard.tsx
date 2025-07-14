@@ -7,8 +7,8 @@ import Temperature from "./Temparature";
 
 const Dashboard = () => {
   return (
-    <div className="min-h-screen w-full bg-green-50">
-   <header className=" fixed top-0 left-64 w-full h-14 flex items-center px-4 z-50 shadow font-bold text-2xl">
+    <div className="bg-green-50  ">
+   <header className=" fixed top-0 left-60 w-full h-14 flex items-center px-4 z-50 shadow font-bold text-2xl">
    Dashboard
   <div className="ml-245">
     <a href="setting">
